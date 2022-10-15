@@ -7,6 +7,7 @@ module.exports = function (RED) {
     RED.nodes.createNode(this, config);
 
     this.scd4x = SCD4x.connect(Number(config.busNumber));
+    this.scd4x = SCD4x.setSensorAltitude(Number(config.altitude));
   }
   RED.nodes.registerType(NODE_TYPE, SCD4xConfigNode);
 };
